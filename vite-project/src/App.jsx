@@ -1,6 +1,8 @@
 import { Component } from "react";
+import Button from './Button.jsx';
+import Counter from './Counter.jsx'
 
-class app extends Component {
+class App extends Component {
 
   title = "Titolo 1";
 
@@ -9,9 +11,13 @@ class app extends Component {
       <>
         <p>Hello world!</p>
         <h1>{this.title}</h1>
+        <Button name="Peppe"/>
+        <Button name="Ruben" lastname="tazzina"/>
+        <Button lastname="sgabello"/>
+        <Counter></Counter>
       </>
     )
   }
 }
 
-export default app;
+export default App;
