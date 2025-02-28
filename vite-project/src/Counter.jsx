@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { useEffect } from "react"
 
 const Counter = ()=> {
     const [number,setNumber]= useState(0);
@@ -18,6 +19,10 @@ const Counter = ()=> {
             return _counter -1;  
         });
     }
+
+    useEffect(()=>{
+        document.title = number
+    },[number])
 
     return (
         <div>
