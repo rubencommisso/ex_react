@@ -11,9 +11,9 @@ class App extends Component {
       <>
         <p>Hello world!</p>
         <h1>{this.title}</h1>
-        <Button name="Peppe"/>
+        {/* <Button name="Peppe"/>
         <Button name="Ruben" lastname="tazzina"/>
-        <Button lastname="sgabello"/>
+        <Button lastname="sgabello"/> */}
         <Counter></Counter>
       </>
     )

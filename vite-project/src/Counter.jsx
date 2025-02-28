@@ -10,8 +10,12 @@ const Counter = ()=> {
     }
 
     const clickOnButtonCut = () => {
+        if(number==0){
+            alert("non puoi scendere sotto lo 0") 
+            return
+        }
         setNumber((_counter) => {
-            return _counter -1;
+            return _counter -1;  
         });
     }
 
@@ -19,8 +23,9 @@ const Counter = ()=> {
         <div>
             <button onClick={clickOnButtonAdd}>Add</button>
             <button onClick={clickOnButtonCut}>cut</button>
+            <button onClick={()=>setNumber(0)}>Reset</button>
 
-            <p>Counter: {number}</p>
+            <p>counter: {number}</p>
             
         </div> )
 }
