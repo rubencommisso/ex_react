@@ -3,6 +3,7 @@ import Button from './Button.jsx';
 import Counter from './Counter.jsx'
 import TextInput from "./TextInput.jsx";
 import LoginForm from "./LoginForm.jsx";
+import UncontrolledInput from "./UncontrolledInput.jsx";
 
 class App extends Component {
 
@@ -17,8 +18,14 @@ class App extends Component {
         <Button name="Ruben" lastname="tazzina"/>
         <Button lastname="sgabello"/> */}
         <Counter></Counter>
+        <br />
         <TextInput/>
+        <br />
+        <br />
         <LoginForm/>
+        <br />
+        <br />
+        <UncontrolledInput/>
       </>
     )
   }
