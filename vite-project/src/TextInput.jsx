@@ -9,7 +9,10 @@ const TextInput = () => {
 
 
     return (
+        <div>
         <input type="text" value={text} onChange={inputText} /> 
+        <p>{text}</p>
+        </div>
     );
 };
 

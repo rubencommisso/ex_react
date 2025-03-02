@@ -2,6 +2,7 @@ import { Component } from "react";
 import Button from './Button.jsx';
 import Counter from './Counter.jsx'
 import TextInput from "./TextInput.jsx";
+import LoginForm from "./LoginForm.jsx";
 
 class App extends Component {
 
@@ -17,6 +18,7 @@ class App extends Component {
         <Button lastname="sgabello"/> */}
         <Counter></Counter>
         <TextInput/>
+        <LoginForm/>
       </>
     )
   }
