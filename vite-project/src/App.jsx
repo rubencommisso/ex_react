@@ -4,6 +4,7 @@ import Counter from './Counter.jsx'
 import TextInput from "./TextInput.jsx";
 import LoginForm from "./LoginForm.jsx";
 import UncontrolledInput from "./UncontrolledInput.jsx";
+import ItemList from "./ItemList.jsx";
 
 class App extends Component {
 
@@ -26,6 +27,8 @@ class App extends Component {
         <br />
         <br />
         <UncontrolledInput/>
+        <br />
+        <ItemList/>
       </>
     )
   }
