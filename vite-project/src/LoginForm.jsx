@@ -1,4 +1,5 @@
 import { useState } from "react";
+import ItemList from "./ItemList";
 
 const LoginForm = () => {
     const [form, setForm] = useState({
@@ -10,46 +11,46 @@ const LoginForm = () => {
         const { name, value } = event.target;
 
         setForm((_form) => ({
-            ..._form, // Usa _form per prendere lo stato attuale
+            ..._form,
             [name]: value
         }));
     };
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        console.log(form);
-    };
-
     const submitButton = (event) => {
         event.preventDefault();
-        alert(`Username: ${form.username} \n Password: ${form.password}`);
+        alert(`Username: ${form.username} \nPassword: ${form.password}`);
     };
+
 
     return (
         <div>
-            <form onSubmit={handleSubmit}> 
+            <form onSubmit={submitButton}>
                 <label>Username:</label>
                 <input 
                     type="text" 
                     name="username" 
                     value={form.username} 
-                    onChange={handleInput} // Usa onChange
+                    onChange={handleInput}
                 />
                 <br />
 
                 <label>Password:</label>
                 <input 
-                    type="password" // Tipo corretto per la password
+                    type="password" 
                     name="password" 
                     value={form.password} 
-                    onChange={handleInput} // Usa onChange
+                    onChange={handleInput}
                 />
                 <br />
 
-                <button type="submit" onClick={submitButton}>Submit</button>
+                <button type="submit">Submit</button>
             </form>
+
+         
+            <ItemList />
         </div>
     );
 };
 
 export default LoginForm;
+

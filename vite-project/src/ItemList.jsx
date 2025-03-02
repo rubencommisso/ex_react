@@ -1,17 +1,13 @@
 const ItemList = () => {
-    const element = ["Ruben","Andrea","Gaia","Vera"];
+    const element = ["Ruben", "Andrea", "Gaia", "Vera"];
     
     return (
-        <>
         <ul>
-            {
-                element.map((propername,index) => (
-                    <li key={`name-item-${index}`}>{propername}</li>
-                ))
-            }
+            {element.map((propername, index) => (
+                <li key={`name-item-${index}`}>{propername}</li>
+            ))}
         </ul>
-        </>
-    )
+    );
 };
 
-export default ItemList
+export default ItemList;
