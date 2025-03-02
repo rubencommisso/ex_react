@@ -1,8 +1,16 @@
+import { useRef } from "react";
+
 const UncontrolledInput = () => {
+    const inputRef = useRef(null); 
+
+    
 
     return (
-        <input type="text" />
-    )
+        <div>
+            <input type="text" ref={inputRef} /> {}
+            
+        </div>
+    );
 };
 
-export default UncontrolledInput
+export default UncontrolledInput;
