@@ -20,6 +20,11 @@ const LoginForm = () => {
         console.log(form);
     };
 
+    const submitButton = (event) => {
+        event.preventDefault();
+        alert(`Username: ${form.username} \n Password: ${form.password}`);
+    };
+
     return (
         <div>
             <form onSubmit={handleSubmit}> 
@@ -41,7 +46,7 @@ const LoginForm = () => {
                 />
                 <br />
 
-                <button type="submit">Submit</button>
+                <button type="submit" onClick={submitButton}>Submit</button>
             </form>
         </div>
     );
