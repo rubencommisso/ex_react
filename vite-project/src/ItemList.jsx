@@ -3,13 +3,13 @@ const ItemList = () => {
     
     return (
         <>
-        <ol>
+        <ul>
             {
                 element.map((propername,index) => (
                     <li key={`name-item-${index}`}>{propername}</li>
                 ))
             }
-        </ol>
+        </ul>
         </>
     )
 };
