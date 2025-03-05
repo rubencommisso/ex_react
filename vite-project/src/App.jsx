@@ -5,6 +5,9 @@ import TextInput from "./TextInput.jsx";
 import LoginForm from "./LoginForm.jsx";
 import UncontrolledInput from "./UncontrolledInput.jsx";
 import ItemList from "./ItemList.jsx";
+import Card from "./Card.jsx";
+
+
 
 class App extends Component {
 
@@ -29,6 +32,11 @@ class App extends Component {
         <UncontrolledInput/>
         <br />
         <ItemList/>
+        <br />
+       {/*  <Card>
+          <h2>Titolo della Card</h2>
+          <p>Questo è un paragrafo dentro la Card.</p>
+        </Card> */}
       </>
     )
   }
