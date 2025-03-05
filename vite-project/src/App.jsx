@@ -33,10 +33,10 @@ class App extends Component {
         <br />
         <ItemList/>
         <br />
-       {/*  <Card>
+        <Card>
           <h2>Titolo della Card</h2>
           <p>Questo è un paragrafo dentro la Card.</p>
-        </Card> */}
+        </Card>
       </>
     )
   }
