@@ -7,6 +7,7 @@ import UncontrolledInput from "./UncontrolledInput.jsx";
 import ItemList from "./ItemList.jsx";
 import Card from "./Card.jsx";
 import useFetch from "./hook/useFetch.jsx";
+import TodoList from "./TodoList.jsx";
 
 
 const App = () => {
@@ -42,6 +43,7 @@ const App = () => {
         {data?.map((el, index) => (
             <div key={index}>{el.title}</div>
         ))}
+        <TodoList/>
       </>
     )
   }
