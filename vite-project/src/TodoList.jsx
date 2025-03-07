@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback} from "react";
 import useFetch from "./hook/useFetch.jsx";
 import useFilteredTodos from "./hook/useFilteredTodos.jsx";
 
@@ -6,6 +6,11 @@ const TodoList = () => {
     const { data: todos, loading, error } = useFetch("https://jsonplaceholder.typicode.com/todos");
     const [searchTerm, setSearchTerm] = useState("");
     const filteredTodos = useFilteredTodos(todos, searchTerm);
+
+    const handleSearchChange = useCallback((e)=>{
+        setSearchTerm(e.target.value)
+        console.log("handleSerachChange sta funzionando")
+    },[])
 
     if (loading) return <p>Caricamento...</p>;
     if (error) return <p>Errore: {error}</p>;
@@ -17,7 +22,7 @@ const TodoList = () => {
                 type="text"
                 placeholder="Cerca to-do..."
                 value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
+                onChange = {handleSearchChange}
             />
             <ul>
                 {filteredTodos.map(todo => (
