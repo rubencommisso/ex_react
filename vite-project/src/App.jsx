@@ -44,7 +44,10 @@ const App = () => {
             <div key={index}>{el.title}</div>
         ))}
         <TodoProvider>
-        <TodoList/>
+            <div>
+                <h1>Gestione To-Do</h1>
+                <TodoList />
+            </div>
         </TodoProvider>
         
       </>
