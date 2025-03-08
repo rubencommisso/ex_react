@@ -1,29 +1,27 @@
-import { useState, useMemo, useRef, useEffect} from "react";
-import useFetch from "./hook/useFetch.jsx";
+import { useState, useMemo, useRef, useEffect } from "react";
+import { useTodos } from "./providers/TodoContext.jsx";
 
 const TodoList = () => {
-    const { data: todos, loading, error } = useFetch("https://jsonplaceholder.typicode.com/todos");
+    const { todoList, loading, error } = useTodos();
     const [searchTerm, setSearchTerm] = useState("");
     const inputRef = useRef();
 
+    // Filtra i to-do in base alla ricerca
     const filteredTodos = useMemo(() => {
-        if (!todos || todos.length === 0) return [];
-        if (!searchTerm) return todos;
-        return todos.filter(todo =>
+        if (!todoList || todoList.length === 0) return [];
+        if (!searchTerm) return todoList;
+        return todoList.filter(todo =>
             todo.title.toLowerCase().includes(searchTerm.toLowerCase())
         );
-    }, [todos, searchTerm]);
+    }, [todoList, searchTerm]);
 
     const handleSearchChange = (e) => {
         setSearchTerm(e.target.value);
-        console.log("handleSearchChange sta funzionando");
     };
 
     useEffect(() => {
-        if (!loading && inputRef.current) {
-            inputRef.current.focus();
-        }
-    }, [loading]);
+        if (inputRef.current) inputRef.current.focus();
+    }, []);
 
     if (loading) return <p>Caricamento...</p>;
     if (error) return <p>Errore: {error}</p>;
@@ -51,5 +49,6 @@ const TodoList = () => {
 };
 
 export default TodoList;
+
 
 

@@ -8,7 +8,7 @@ import ItemList from "./ItemList.jsx";
 import Card from "./Card.jsx";
 import useFetch from "./hook/useFetch.jsx";
 import TodoList from "./TodoList.jsx";
-
+import { TodoProvider } from "./providers/TodoContext.jsx";
 
 const App = () => {
   
@@ -43,7 +43,10 @@ const App = () => {
         {data?.map((el, index) => (
             <div key={index}>{el.title}</div>
         ))}
+        <TodoProvider>
         <TodoList/>
+        </TodoProvider>
+        
       </>
     )
   }
