@@ -14,6 +14,7 @@ import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home.jsx";
 import About from "./pages/About.jsx";
 import { TodoProvider } from "./providers/TodoContext.jsx";
+import Navbar from "./Navbar.jsx";
 
 
 const App = () => {
@@ -56,6 +57,7 @@ const App = () => {
             </div>
         </TodoProvider>
          */}
+         <Navbar/>
          <TodoProvider>
          <Routes>
             <Route path="/" element={<Home/>}/>
