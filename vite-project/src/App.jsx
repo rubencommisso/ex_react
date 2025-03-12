@@ -15,7 +15,7 @@ import Home from "./pages/Home.jsx";
 import About from "./pages/About.jsx";
 import { TodoProvider } from "./providers/TodoContext.jsx";
 import Navbar from "./Navbar.jsx";
-
+import PublicLayout from "./layouts/PublicLayout.jsx"
 
 const App = () => {
   
@@ -57,11 +57,13 @@ const App = () => {
             </div>
         </TodoProvider>
          */}
-         <Navbar/>
+         {/* <Navbar/> */}
          <TodoProvider>
          <Routes>
-            <Route path="/" element={<Home/>}/>
-            <Route path="/about" element={<About/>}/>
+            <Route path="/" element={<PublicLayout/>}>
+                <Route path="" element={<Home/>}/>
+                <Route path="/about" element={<About/>}/>
+            </Route>
          </Routes>
          </TodoProvider>
       </>
