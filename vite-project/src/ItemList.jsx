@@ -1,5 +1,5 @@
-const ItemList = () => {
-    const element = ["Ruben", "Andrea", "Gaia", "Vera"];
+const ItemList = ({element}) => {
+    
     
     return (
         <ul>

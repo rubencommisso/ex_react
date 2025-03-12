@@ -15,9 +15,9 @@ import Home from "./pages/Home.jsx";
 import About from "./pages/About.jsx";
 import Navbar from "./Navbar.jsx";
 import PublicLayout from "./layouts/PublicLayout.jsx"
-
+import ItemList from "./ItemList.jsx";
 const App = () => {
-  
+  const element = ["Ruben", "Andrea", "Gaia", "Vera"];
   /* const title = "Titolo 1";
 
     const {data, loading, error } = useFetch("https://jsonplaceholder.typicode.com/posts") */
@@ -38,7 +38,7 @@ const App = () => {
         <br />
         <UncontrolledInput/>
         <br />
-        <ItemList/>
+        <ItemList element={element}/>
         <br />
         <Card>
           <h2>Titolo della Card</h2>
@@ -60,7 +60,7 @@ const App = () => {
          
          <Routes>
             <Route path="/" element={<PublicLayout/>}>
-                <Route index element={<Home/>}/>
+                <Route index element={<ItemList element={element}/>}/>
                 <Route path="about" element={<About/>}/>
             </Route>
          </Routes>
