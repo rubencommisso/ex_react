@@ -13,7 +13,6 @@ import { TodoProvider } from "./providers/TodoContext.jsx"; */
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home.jsx";
 import About from "./pages/About.jsx";
-import { TodoProvider } from "./providers/TodoContext.jsx";
 import Navbar from "./Navbar.jsx";
 import PublicLayout from "./layouts/PublicLayout.jsx"
 
@@ -58,14 +57,14 @@ const App = () => {
         </TodoProvider>
          */}
          {/* <Navbar/> */}
-         <TodoProvider>
+         
          <Routes>
             <Route path="/" element={<PublicLayout/>}>
-                <Route path="" element={<Home/>}/>
-                <Route path="/about" element={<About/>}/>
+                <Route index element={<Home/>}/>
+                <Route path="about" element={<About/>}/>
             </Route>
          </Routes>
-         </TodoProvider>
+        
       </>
     )
   }
