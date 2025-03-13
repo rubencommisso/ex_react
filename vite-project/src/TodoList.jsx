@@ -1,6 +1,7 @@
 import { useState, useMemo, useRef, useEffect } from "react";
 import { useTodos } from "./providers/TodoContext.jsx";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const TodoList = () => {
     const { todoList, loading, error } = useTodos();
@@ -21,9 +22,9 @@ const TodoList = () => {
         setSearchTerm(e.target.value);
     };
 
-    const handleTodoClick = (id) => {
+    /* const handleTodoClick = (id) => {
         navigate(`/todo/${id}`);
-      };
+      }; */
 
     useEffect(() => {
         if (inputRef.current) inputRef.current.focus();
@@ -44,8 +45,9 @@ const TodoList = () => {
             />
             <ul>
                 {filteredTodos.map(todo => (
-                    <li key={todo.id} onClick={() => handleTodoClick(todo.id)}>
+                    <li key={todo.id} /* onClick={() => handleTodoClick(todo.id)} */>
                         <input type="checkbox" checked={todo.completed} readOnly />
+                        <Link to={`/todo/${todo.id}`}>{todo.title}</Link>
                         {todo.title}
                     </li>
                 ))}
