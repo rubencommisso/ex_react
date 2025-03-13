@@ -1,10 +1,14 @@
 import { useState, useMemo, useRef, useEffect } from "react";
 import { useTodos } from "./providers/TodoContext.jsx";
+import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const TodoList = () => {
     const { todoList, loading, error } = useTodos();
     const [searchTerm, setSearchTerm] = useState("");
     const inputRef = useRef();
+    const params = useParams();
+    const navigate = useNavigate();
 
     // Filtra i to-do in base alla ricerca
     const filteredTodos = useMemo(() => {
@@ -18,6 +22,10 @@ const TodoList = () => {
     const handleSearchChange = (e) => {
         setSearchTerm(e.target.value);
     };
+
+    const handleTodoClick = (id) => {
+        navigate(`/todo/${id}`);
+      };
 
     useEffect(() => {
         if (inputRef.current) inputRef.current.focus();
@@ -36,9 +44,12 @@ const TodoList = () => {
                 value={searchTerm}
                 onChange={handleSearchChange}
             />
+            <div>
+                {JSON.stringify(params)}
+            </div>
             <ul>
                 {filteredTodos.map(todo => (
-                    <li key={todo.id}>
+                    <li key={todo.id} onClick={() => handleTodoClick(todo.id)}>
                         <input type="checkbox" checked={todo.completed} readOnly />
                         {todo.title}
                     </li>

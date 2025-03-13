@@ -92,3 +92,12 @@ nav{
   border-color: #f9f9f9;
   background-color: black;
 }
+
+.TodoDiv{
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  border-style: solid;
+  border-color: #f9f9f9;
+  background-color: black;
+}
