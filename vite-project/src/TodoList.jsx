@@ -1,13 +1,12 @@
 import { useState, useMemo, useRef, useEffect } from "react";
 import { useTodos } from "./providers/TodoContext.jsx";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 const TodoList = () => {
     const { todoList, loading, error } = useTodos();
     const [searchTerm, setSearchTerm] = useState("");
     const inputRef = useRef();
-    const navigate = useNavigate();
     const [searchParams, setSearchParams] = useSearchParams();
 
     useEffect(() => {
